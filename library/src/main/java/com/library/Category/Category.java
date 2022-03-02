@@ -13,7 +13,7 @@ public class Category {
     private String label;
 
     public Category(){
-        super();
+
     }
 
     public Category(String code,String label){
