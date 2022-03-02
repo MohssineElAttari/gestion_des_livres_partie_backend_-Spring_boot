@@ -1,11 +1,13 @@
 package com.library.Book;
 
 import com.library.Category.Category;
+import com.library.Loan.Loan;
 import org.springframework.data.util.Lazy;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="BOOK")
@@ -30,9 +32,11 @@ public class Book {
     Set<Loan> loans = new HashSet<Loan>();
 
     public Book() {
+        super();
     }
 
     public Book(Long id, String ISBN, String title, LocalDate releaseDate, LocalDate registerDate, Integer totaleExamplaires, String author, Category category, Set<Loan> loans) {
+        super();
         this.id = id;
         this.ISBN = ISBN;
         this.title = title;
@@ -116,7 +120,7 @@ public class Book {
     public void setCategory(Category category) {
         this.category = category;
     }
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "pk.book",cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.book", cascade = CascadeType.ALL)
     public Set<Loan> getLoans() {
         return loans;
     }
