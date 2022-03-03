@@ -13,7 +13,7 @@ import java.util.Set;
 @Table(name="BOOK")
 public class Book {
 
-    private Long id;
+    private Integer id;
 
     private String ISBN;
 
@@ -35,7 +35,7 @@ public class Book {
         super();
     }
 
-    public Book(Long id, String ISBN, String title, LocalDate releaseDate, LocalDate registerDate, Integer totaleExamplaires, String author, Category category, Set<Loan> loans) {
+    public Book(Integer id, String ISBN, String title, LocalDate releaseDate, LocalDate registerDate, Integer totaleExamplaires, String author, Category category, Set<Loan> loans) {
         super();
         this.id = id;
         this.ISBN = ISBN;
@@ -51,11 +51,11 @@ public class Book {
     @Id
     @Column(name = "BOOK_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
