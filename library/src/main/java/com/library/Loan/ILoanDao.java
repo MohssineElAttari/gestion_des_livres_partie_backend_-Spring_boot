@@ -27,4 +27,5 @@ public interface ILoanDao extends JpaRepository<Loan,Integer> {
             + "   AND c.id = ?2 "
             + "   AND lo.status = ?3 ")
     public Loan getLoanByCriteria(Integer bookId, Integer customerId, LoanStatus status);
+
 }
